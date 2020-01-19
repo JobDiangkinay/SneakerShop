@@ -8,4 +8,5 @@ public interface SneakerService {
 
 	Sneaker getSneakerById(String id);
 	List<Sneaker> getAllSneakers();
+	Sneaker insertSneaker(Sneaker sneaker);
 }

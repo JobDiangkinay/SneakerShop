@@ -25,4 +25,9 @@ public class SneakerServiceImpl implements SneakerService{
 		return sneakerRepository.getAllSneakers();
 	}
 
+	@Override
+	public Sneaker insertSneaker(Sneaker sneaker) {
+		return sneakerRepository.insertSneaker(sneaker);
+	}
+
 }

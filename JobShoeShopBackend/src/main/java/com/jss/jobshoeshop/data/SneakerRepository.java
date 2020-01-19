@@ -40,4 +40,13 @@ public class SneakerRepository extends JdbcDaoSupport {
 		
 		return result;
 	}
+	
+	public Sneaker insertSneaker(Sneaker sneaker) {
+		String sql = "INSERT INTO shoemodel (modelid, modelname, brandname) VALUES (?, ?, ?)" ;
+		getJdbcTemplate().update(sql, new Object[]{
+				sneaker.getModelID(), sneaker.getModelName(), sneaker.getBrand()
+		});
+		return sneaker;
+	}
+	
 }
