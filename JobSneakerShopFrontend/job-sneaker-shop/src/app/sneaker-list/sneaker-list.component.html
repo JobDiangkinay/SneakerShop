@@ -1,0 +1,20 @@
+<div class="container">
+    <span>Display shoes here</span>
+</div>
+<div>
+    <div class="container">
+        <div class="row">
+            <div *ngFor="let sneaker of allSneakerList" class="sneaker col-xs-3 tile">
+                <div>
+                    Model ID: {{sneaker.modelID}}
+                </div>
+                <div>
+                    Name: {{sneaker.modelName}}
+                </div>
+                <div>
+                    Brand: {{sneaker.brand}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
