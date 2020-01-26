@@ -1,10 +1,7 @@
-<div class="container">
-    <span>Display shoes here</span>
-</div>
-<div>
+<div *ngIf="!showSneakerDetail">
     <div class="container">
         <div class="row">
-            <div *ngFor="let sneaker of allSneakerList" class="sneaker col-xs-3 tile">
+            <div *ngFor="let sneaker of allSneakerList" class="sneaker col-xs-3 tile" (click)=handleSneaker(sneaker)>
                 <div>
                     Model ID: {{sneaker.modelID}}
                 </div>
@@ -18,3 +15,4 @@
         </div>
     </div>
 </div>
+<app-sneaker-detail [selectSneaker]="selSneaker" *ngIf="showSneakerDetail"></app-sneaker-detail>

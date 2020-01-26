@@ -5,11 +5,13 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SneakerListComponent } from './sneaker-list/sneaker-list.component';
+import { SneakerDetailComponent } from './components/sneaker-detail/sneaker-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SneakerListComponent
+    SneakerListComponent,
+    SneakerDetailComponent
   ],
   imports: [
     BrowserModule,

@@ -9,11 +9,18 @@ import { SneakerListService } from './sneaker-list.service';
 })
 export class SneakerListComponent implements OnInit {
   allSneakerList: Sneaker[];
+  selSneaker: Sneaker;
+  showSneakerDetail: boolean = false;
 
   constructor(private sneakerListService: SneakerListService) { }
 
   ngOnInit() {
     this.sneakerListService.getAllSneakers().subscribe(allSneakerList => this.allSneakerList = allSneakerList);
+  }
+
+  handleSneaker(curSneaker: Sneaker){
+    this.selSneaker = curSneaker;
+    this.showSneakerDetail = true;
   }
 
 }
