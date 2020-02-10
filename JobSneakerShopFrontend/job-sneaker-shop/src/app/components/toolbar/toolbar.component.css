@@ -1,0 +1,17 @@
+.option-margin{
+    margin: 2%;
+}
+
+a:hover {
+    color: white;
+  }
+a:link {
+    color: white;
+}
+a:active {
+    color: white;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }

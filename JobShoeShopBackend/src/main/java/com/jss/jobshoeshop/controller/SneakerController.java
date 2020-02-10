@@ -22,7 +22,7 @@ public class SneakerController {
 
 	@GetMapping("/{id}")
 	public Sneaker getSneakerByID(@PathVariable String id) {
-		return null;
+		return sneakerService.getSneakerById(id);
 	}
 	
 	@GetMapping("/StringTester")
@@ -34,6 +34,7 @@ public class SneakerController {
 	public List<Sneaker> getAllSneakers(){
 		return sneakerService.getAllSneakers();
 	}
+	
 	
 	@PostMapping("/insert")
 	public Sneaker insertSneaker(@RequestBody Sneaker sneaker) {

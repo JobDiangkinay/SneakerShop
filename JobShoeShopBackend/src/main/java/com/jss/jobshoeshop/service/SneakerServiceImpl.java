@@ -17,7 +17,7 @@ public class SneakerServiceImpl implements SneakerService{
 	@Override
 	public Sneaker getSneakerById(String id) {
 		// TODO Auto-generated method stub
-		return null;
+		return sneakerRepository.getSneakerById(id);
 	}
 
 	@Override
