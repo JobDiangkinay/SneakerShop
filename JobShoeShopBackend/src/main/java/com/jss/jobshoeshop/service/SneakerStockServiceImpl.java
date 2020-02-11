@@ -16,8 +16,7 @@ public class SneakerStockServiceImpl implements SneakerStockService {
 
 	@Override
 	public SneakerStock getStockById(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		return sneakerStockRepository.getStockById(id);
 	}
 
 	@Override
