@@ -30,4 +30,9 @@ public class SneakerServiceImpl implements SneakerService{
 		return sneakerRepository.insertSneaker(sneaker);
 	}
 
+	@Override
+	public List<Sneaker> getSneakersByBrand(String brandName) {
+		return sneakerRepository.getSneakersByBrand(brandName);
+	}
+
 }

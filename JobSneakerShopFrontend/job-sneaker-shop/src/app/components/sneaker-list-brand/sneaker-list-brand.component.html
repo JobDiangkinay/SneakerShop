@@ -1,7 +1,10 @@
+<div class="container">
+    <h2>{{brandHeader}}</h2>
+</div>
 <div *ngIf="!showSneakerDetail">
     <div class="container">
         <div class="row">
-            <div *ngFor="let sneaker of allSneakerList" class="sneaker col-xs-3 tile" (click)=handleSneaker(sneaker)>
+            <div *ngFor="let sneaker of sneakerListTry | async " class="sneaker col-xs-3 tile"  [routerLink]="['/SneakerShop',selectBrand,sneaker.modelID]">
                 <div>
                     Model ID: {{sneaker.modelID}}
                 </div>
@@ -15,4 +18,3 @@
         </div>
     </div>
 </div>
-<app-sneaker-detail [selectSneaker]="selSneaker" *ngIf="showSneakerDetail"></app-sneaker-detail>

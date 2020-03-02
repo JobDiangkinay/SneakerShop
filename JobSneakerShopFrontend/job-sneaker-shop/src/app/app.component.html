@@ -1,3 +1,19 @@
-<app-toolbar></app-toolbar>
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+     <!--<a mat-button  [routerLink]="'/'">  <h1>Job Sneaker Shop</h1> </a>-->
+     <a mat-button [routerLink]="['/SneakerShop',all]">  <h1>Job Sneaker Shop</h1> </a>
+      <div class="option-margin">
+        <a mat-button [matMenuTriggerFor]="menu">Brands</a>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+ 
+<mat-menu #menu="matMenu">
+  <button mat-menu-item [routerLink]="['/SneakerShop',all]" >All</button>
+  <button mat-menu-item [routerLink]="['/SneakerShop',adidas]">Adidas</button>
+  <button mat-menu-item [routerLink]="['/SneakerShop',nike]">Nike</button>
+  <button mat-menu-item [routerLink]="['/SneakerShop',jordan]">Jordan</button>
+</mat-menu>
+
 
 <router-outlet></router-outlet>

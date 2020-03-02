@@ -35,6 +35,11 @@ public class SneakerController {
 		return sneakerService.getAllSneakers();
 	}
 	
+	@GetMapping("/brand/{brandName}")
+	public List<Sneaker> getSneakerByBrandName(@PathVariable String brandName){
+		return sneakerService.getSneakersByBrand(brandName);
+	}
+	
 	
 	@PostMapping("/insert")
 	public Sneaker insertSneaker(@RequestBody Sneaker sneaker) {

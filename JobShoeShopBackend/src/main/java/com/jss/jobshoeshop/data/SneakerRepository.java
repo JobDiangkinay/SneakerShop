@@ -37,7 +37,22 @@ public class SneakerRepository extends JdbcDaoSupport {
 			sneaker.setModelID((String)row.get("modelid"));
 			sneaker.setModelName((String)row.get("modelname"));
 			sneaker.setBrand((String)row.get("brandname"));
-			System.out.println(sneaker.getModelName());
+			result.add(sneaker);
+		}
+		
+		return result;
+	}
+	
+	public List<Sneaker> getSneakersByBrand(String brandName){
+		String sql = "SELECT * FROM shoemodel where brandname = ?";
+		List<Map<String, Object>> rows = getJdbcTemplate().queryForList(sql,new Object[]{brandName});
+		
+		List<Sneaker> result = new ArrayList<Sneaker>();
+		for(Map<String, Object> row:rows){
+			Sneaker sneaker = new Sneaker();
+			sneaker.setModelID((String)row.get("modelid"));
+			sneaker.setModelName((String)row.get("modelname"));
+			sneaker.setBrand((String)row.get("brandname"));
 			result.add(sneaker);
 		}
 		

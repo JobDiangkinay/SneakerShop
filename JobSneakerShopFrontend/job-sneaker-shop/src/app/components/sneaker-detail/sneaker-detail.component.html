@@ -1,14 +1,28 @@
-<div *ngIf="!showSneakerDetail" class="container">
+<div *ngIf="!showByBrand" class="container">
     <div *ngIf="currentSneaker" class="sneaker">
+        <span><a class="close" [routerLink]="['/SneakerShop',currentBackTo]">X</a></span>
         <div>
-            <h2>Model Name: {{currentSneaker.modelName}}</h2>
+            <span>
+                <h2>Model Name: {{currentSneaker.modelName}}</h2>
+            </span>
+
         </div>
         <div>Model ID: {{currentSneaker.modelID}} </div>
         <div>brand: {{currentSneaker.brand}}</div>
+        <br>
         <div>
+            <mat-form-field>
+                <mat-label>Size</mat-label>
+                <select matNativeControl required  [(ngModel)]="selectedValue">
+                  <option *ngFor="let size of currentSneakerStock.stockList | keyvalue:mySortingFunction" [value]="size.key">
+                    {{ size.key }}
+                  </option>
+                </select>
+              </mat-form-field>
         </div>
         <br>
-        <span><button class="btn btn-primary"(click)="handleBackButton()">Back</button></span>
+        <div>You Selected : {{selectedValue}}</div>
+        <span><button class="btn btn-primary">Add To Cart</button></span>
+
     </div>
 </div>
-<app-sneaker-list *ngIf="showSneakerDetail"></app-sneaker-list>
