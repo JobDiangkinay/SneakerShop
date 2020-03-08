@@ -14,15 +14,17 @@
             <mat-form-field>
                 <mat-label>Size</mat-label>
                 <select matNativeControl required  [(ngModel)]="selectedValue">
-                  <option *ngFor="let size of currentSneakerStock.stockList | keyvalue:mySortingFunction" [value]="size.key">
-                    {{ size.key }}
+                  <!--<option *ngFor="let size of currentSneakerStock.stockList | keyvalue:mySortingFunction" [value]="size.key">-->
+                  <option *ngFor="let size of displaySizes ">  
+                    <!--{{ sneakerSizeLabel(size.key) }}-->
+                    {{size}}
                   </option>
                 </select>
               </mat-form-field>
         </div>
         <br>
         <div>You Selected : {{selectedValue}}</div>
-        <span><button class="btn btn-primary">Add To Cart</button></span>
+        <span><button class="btn btn-primary" >Add To Cart</button></span>
 
     </div>
 </div>

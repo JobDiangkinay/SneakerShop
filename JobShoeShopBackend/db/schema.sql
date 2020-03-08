@@ -23,5 +23,33 @@ create table ShoeStock(
 	size7 integer
 );
 
+CREATE SEQUENCE customer_customerid_seq
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 99999
+  START 10001 ---> here you can mention startup nummber as you need
+  CACHE 1;
+
+create table Customer(
+	customerId integer NOT NULL primary key DEFAULT nextval('customer_customerid_seq'),
+	firstName varchar not null,
+	lastName varchar not null,
+	emailAddress varchar not null,
+	phoneNumber varchar not null
+);
+
+
+create table Address(
+	customerId integer primary key,
+	streetAddress varchar not null,
+	aptNo varchar not null,
+	state varchar not null,
+	zipCode varchar not null,
+	city varchar not null,
+	isDefault boolean not null
+);
+
+
+
 
 
