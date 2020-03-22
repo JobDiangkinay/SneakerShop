@@ -1,6 +1,7 @@
 package com.jss.jobshoeshop.model;
 
 public class Address {
+	private double addressId;
 	private String streetAddress;
 	private String aptNo;
 	private String state;
@@ -11,14 +12,26 @@ public class Address {
 	public Address() {
 	}
 	
-	public Address(String streetAddress, String aptNo, String state, String zipCode, String city, boolean isDefault) {
+	
+
+	public Address(double addressId, String streetAddress, String aptNo, String state, String zipCode, String city,
+			boolean isDefault) {
 		super();
+		this.addressId = addressId;
 		this.streetAddress = streetAddress;
 		this.aptNo = aptNo;
 		this.state = state;
 		this.zipCode = zipCode;
 		this.city = city;
 		this.isDefault = isDefault;
+	}
+
+	public double getAddressId() {
+		return addressId;
+	}
+
+	public void setAddressId(double addressId) {
+		this.addressId = addressId;
 	}
 
 	public String getStreetAddress() {

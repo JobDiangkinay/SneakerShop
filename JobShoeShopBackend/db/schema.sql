@@ -39,14 +39,15 @@ create table Customer(
 );
 
 
-create table Address(
-	customerId integer primary key,
-	streetAddress varchar not null,
-	aptNo varchar not null,
-	state varchar not null,
-	zipCode varchar not null,
-	city varchar not null,
-	isDefault boolean not null
+CREATE TABLE address(
+   addressid integer NOT NULL primary key DEFAULT nextval('address_addressid_seq'),
+   customerid     integer   NOT NULL,
+   streetaddress  varchar   NOT NULL,
+   aptno          varchar   NOT NULL,
+   state          varchar   NOT NULL,
+   zipcode        varchar   NOT NULL,
+   city           varchar   NOT NULL,
+   isdefault      boolean   NOT NULL
 );
 
 
