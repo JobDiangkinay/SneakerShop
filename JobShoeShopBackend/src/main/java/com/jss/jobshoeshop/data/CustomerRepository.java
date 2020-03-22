@@ -14,25 +14,31 @@ import com.jss.jobshoeshop.model.Address;
 import com.jss.jobshoeshop.model.Customer;
 
 @Repository
-public class CustomerRepository extends JdbcDaoSupport{
-	
+public class CustomerRepository extends JdbcDaoSupport {
+
 	@Autowired
 	DataSource dataSource;
-	
+
 	@Autowired
 	AddressRepository addressRepository;
-	
+
 	@PostConstruct
-	private void initialize(){
+	private void initialize() {
 		setDataSource(dataSource);
 	}
-	
+
 	public Customer getCustomerById(Double id) {
 		String sql = "SELECT * FROM customer WHERE customerid=?";
-		System.out.println("CustRepository: "+id);
-		Customer customer = (Customer)getJdbcTemplate().queryForObject(sql,new Object[]{id}, new CustomerMapper());
+		Customer customer = (Customer) getJdbcTemplate().queryForObject(sql, new Object[] { id }, new CustomerMapper());
 		List<Address> listAddress = addressRepository.getAddressByCustomerId(id);
 		customer.setAddressList(listAddress);
+		return customer;
+	}
+
+	public Customer insertCustomer(Customer customer) {
+		String sql = "INSERT INTO customer (firstname, lastname, emailaddress, phonenumber) VALUES (?, ?, ?, ?)";
+		getJdbcTemplate().update(sql, new Object[] { customer.getFirstName(), customer.getLastName(),
+				customer.getEmailAddress(), customer.getPhoneNumber() });
 		return customer;
 	}
 
