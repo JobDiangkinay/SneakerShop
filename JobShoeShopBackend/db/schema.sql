@@ -50,7 +50,24 @@ CREATE TABLE address(
    isdefault      boolean   NOT NULL
 );
 
+CREATE SEQUENCE finorder_finorderid_seq
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 999999
+  START 100001 ---> here you can mention startup nummber as you need
+  CACHE 1;
 
+create table FinalOrder(
+	finalOrderId integer NOT NULL primary key DEFAULT nextval('finorder_finorderid_seq'),
+	customerid integer not null,
+	addressid integer not null,
+	trackingNumber varchar not null
+);
 
-
+create table SneakerOrder(
+  sneakerOrderId integer not null primary key DEFAULT nextval('finorder_finorderid_seq'),
+  sneakerId integer not null,
+  quantity integer not null,
+  size varchar not null
+);
 
