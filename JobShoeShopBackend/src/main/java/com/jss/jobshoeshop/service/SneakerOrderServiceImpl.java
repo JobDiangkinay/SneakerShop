@@ -1,5 +1,7 @@
 package com.jss.jobshoeshop.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,11 @@ public class SneakerOrderServiceImpl implements SneakerOrderService{
 	@Override
 	public SneakerOrder getSneakerOrderById(String id) {
 		return sneakerOrderRepository.getSneakerOrderById(id);
+	}
+	
+	@Override
+	public List<SneakerOrder> getCustomerCartById(String id) {
+		return sneakerOrderRepository.getCartSneakerOrders(id);
 	}
 
 	@Override
