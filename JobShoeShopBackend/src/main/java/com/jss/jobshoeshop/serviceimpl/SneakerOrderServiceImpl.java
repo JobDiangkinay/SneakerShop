@@ -1,4 +1,4 @@
-package com.jss.jobshoeshop.service;
+package com.jss.jobshoeshop.serviceimpl;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.jss.jobshoeshop.data.SneakerOrderRepository;
 import com.jss.jobshoeshop.model.SneakerOrder;
+import com.jss.jobshoeshop.service.SneakerOrderService;
 
 @Service
 public class SneakerOrderServiceImpl implements SneakerOrderService{
